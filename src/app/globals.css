@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: #eeefea;
+  --ink: #161714;
+  --muted: #6e7065;
+  --hairline: #d6d7cf;
+  --signal: #0e7c5a;
+  --signal-bright: #16a37a;
+  --warn: #b23a22;
+}
+
+html,
+body {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+/* Visible keyboard focus everywhere. */
+*:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--signal-bright);
+  color: #fff;
+}
+
+/* The collapse reveal — staggered fade/slide on generated rows. */
+@keyframes alias-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alias-reveal {
+  animation: alias-reveal 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alias-reveal {
+    animation: none;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
