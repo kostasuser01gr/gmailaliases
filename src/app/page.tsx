@@ -1,5 +1,5 @@
-import AliasConsole from "@/components/AliasConsole";
+import AliasControlCenter from "@/components/AliasControlCenter";
 
 export default function Page() {
-  return <AliasConsole />;
+  return <AliasControlCenter />;
 }
